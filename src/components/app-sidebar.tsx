@@ -9,8 +9,9 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
+    SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { LayoutDashboard } from "lucide-react"
+import { DatabaseZap, LayoutDashboard } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { NavUser } from "./nav-user"
@@ -31,6 +32,7 @@ const navData = {
     ],
 }
 
+
 export async function AppSidebar() {
     const supabase = await createClient()
 
@@ -42,9 +44,19 @@ export async function AppSidebar() {
 
     return (
         <Sidebar collapsible="icon" /*{...props}*/>
-            <SidebarHeader className="inline-flex">
-                <span>PROK | Data Hive</span>
+            <SidebarHeader>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton asChild>
+                            <span className="flex align-middle">
+                                <DatabaseZap />
+                                <span>PROK | Data Hive</span>
+                            </span>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </SidebarHeader>
+            <SidebarSeparator className="mx-0" />
             <SidebarContent>
                 {}
                 {navData.navMain.map((item) => (
@@ -55,12 +67,16 @@ export async function AppSidebar() {
                                 {item.items.map((item) => (
                                     <SidebarMenuItem key={item.title}>
                                         <SidebarMenuButton asChild >
-                                            <a href={item.url}>{item.title}</a>
+                                            <span>
+                                                {item.icon && <item.icon />}
+                                                <a href={item.url}>{item.title}</a>
+                                            </span>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 ))}
                             </SidebarMenu>
                         </SidebarGroupContent>
+                        <SidebarSeparator className="mx-0" />
                     </SidebarGroup>
                 ))}
             </SidebarContent>
