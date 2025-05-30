@@ -11,10 +11,11 @@ import {
     SidebarMenuItem,
     SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { DatabaseZap, LayoutDashboard } from "lucide-react"
+import { DatabaseZap, FileStack, Layers, LayoutDashboard } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { NavUser } from "./nav-user"
+import * as React from "react"
 
 const navData = {
     navMain: [
@@ -26,6 +27,22 @@ const navData = {
                     title: "Dashboard",
                     url: "#",
                     icon: LayoutDashboard,
+                },
+                {
+                    title: "Projects",
+                    url: "#",
+                    icon: FileStack,
+                },
+            ],
+        },
+        {
+            title: "MDR",
+            url: "#",
+            items: [
+                {
+                    title: "MDR Register",
+                    url: "#",
+                    icon: Layers,
                 },
             ],
         },
@@ -60,24 +77,26 @@ export async function AppSidebar() {
             <SidebarContent>
                 {}
                 {navData.navMain.map((item) => (
-                    < SidebarGroup key={item.title} >
-                        <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-                        <SidebarGroupContent>
-                            <SidebarMenu>
-                                {item.items.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild >
-                                            <span>
-                                                {item.icon && <item.icon />}
-                                                <a href={item.url}>{item.title}</a>
-                                            </span>
-                                        </SidebarMenuButton>
-                                    </SidebarMenuItem>
-                                ))}
-                            </SidebarMenu>
-                        </SidebarGroupContent>
+                    <React.Fragment key={item.title}>
+                        < SidebarGroup key={item.title} >
+                            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+                            <SidebarGroupContent>
+                                <SidebarMenu>
+                                    {item.items.map((item) => (
+                                        <SidebarMenuItem key={item.title}>
+                                            <SidebarMenuButton asChild >
+                                                <span>
+                                                    {item.icon && <item.icon />}
+                                                    <a href={item.url}>{item.title}</a>
+                                                </span>
+                                            </SidebarMenuButton>
+                                        </SidebarMenuItem>
+                                    ))}
+                                </SidebarMenu>
+                            </SidebarGroupContent>
+                        </SidebarGroup>
                         <SidebarSeparator className="mx-0" />
-                    </SidebarGroup>
+                    </React.Fragment>
                 ))}
             </SidebarContent>
             <SidebarFooter>
