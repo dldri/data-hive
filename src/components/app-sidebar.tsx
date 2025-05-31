@@ -25,12 +25,12 @@ const navData = {
             items: [
                 {
                     title: "Dashboard",
-                    url: "#",
+                    url: "/dashboard",
                     icon: LayoutDashboard,
                 },
                 {
                     title: "Projects",
-                    url: "#",
+                    url: "/projects",
                     icon: FileStack,
                 },
             ],
