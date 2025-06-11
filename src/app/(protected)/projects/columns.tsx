@@ -57,4 +57,28 @@ export const columns: ColumnDef<StatusDrawing>[] = [
         accessorKey: "prok_fmg_revision",
         header: "PROK - Fortescue Revision",
     },
+    {
+        accessorKey: "pims_revision",
+        header: "PIMS Revision",
+    },
+    {
+        accessorKey: "status",
+        header: "Status",
+    },
+    {
+        accessorKey: "person_responsible",
+        header: "Person Responsible",
+    },
+    {
+        accessorKey: "last_updated",
+        header: "Last Updated",
+    },
+    {
+        accessorKey: "po_received_date",
+        header: "PO Received Date",
+    },
+    {
+        accessorKey: "age",
+        header: "Age",
+    },
 ];

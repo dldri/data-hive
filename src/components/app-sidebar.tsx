@@ -21,7 +21,6 @@ const navData = {
     navMain: [
         {
             title: "Refurbishment Services",
-            url: "#",
             items: [
                 {
                     title: "Dashboard",
@@ -37,11 +36,10 @@ const navData = {
         },
         {
             title: "MDR",
-            url: "#",
             items: [
                 {
                     title: "MDR Register",
-                    url: "#",
+                    url: "/mdr",
                     icon: Layers,
                 },
             ],

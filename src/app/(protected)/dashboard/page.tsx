@@ -1,4 +1,4 @@
-export default async function ProtectedPage() {
+export default async function Dashboard() {
     return (
         <div>
             Dashboard
