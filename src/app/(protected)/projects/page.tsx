@@ -29,9 +29,6 @@ export default async function JobStatus() {
 
     return (
         <div className="container mx-auto py-10">
-            {/* <pre> */}
-            {/*     {JSON.stringify(formattedData[0], null, 2)}; */}
-            {/* </pre> */}
             <DataTable columns={columns} data={data} />
         </div>
     );
