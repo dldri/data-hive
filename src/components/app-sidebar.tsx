@@ -11,7 +11,7 @@ import {
     SidebarMenuItem,
     SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { DatabaseZap, FileStack, Layers, LayoutDashboard } from "lucide-react"
+import { ChartNoAxesCombined, DatabaseZap, FileChartColumn, FileStack, Layers, LayoutDashboard, Users } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { NavUser } from "./nav-user"
@@ -30,6 +30,26 @@ const navData = {
                 {
                     title: "Projects",
                     url: "/projects",
+                    icon: FileStack,
+                },
+                {
+                    title: "Customers",
+                    url: "#",
+                    icon: Users,
+                },
+                {
+                    title: "Reports",
+                    url: "#",
+                    icon: FileChartColumn,
+                },
+                {
+                    title: "Financials",
+                    url: "#",
+                    icon: ChartNoAxesCombined,
+                },
+                {
+                    title: "Calendar",
+                    url: "#",
                     icon: FileStack,
                 },
             ],
