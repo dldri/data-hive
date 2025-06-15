@@ -11,7 +11,7 @@ import {
     SidebarMenuItem,
     SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { ChartNoAxesCombined, DatabaseZap, FileChartColumn, FileStack, Layers, LayoutDashboard, Users } from "lucide-react"
+import { CalendarDays, ChartNoAxesCombined, DatabaseZap, FileChartColumn, FileStack, Layers, LayoutDashboard, Users } from "lucide-react"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { NavUser } from "./nav-user"
@@ -50,7 +50,7 @@ const navData = {
                 {
                     title: "Calendar",
                     url: "#",
-                    icon: FileStack,
+                    icon: CalendarDays,
                 },
             ],
         },
